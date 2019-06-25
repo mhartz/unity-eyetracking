@@ -60,3 +60,9 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+# Generated data files
+heatmap.json
+heatmap.json.meta
+heatmap.js
+heatmap.js.meta
