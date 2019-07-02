@@ -4,11 +4,11 @@ class Heatmap
     console.log(this.sanitizeHeatmapData());
   }
   
-  static sanitizeHeatmapData() {
+  sanitizeHeatmapData() {
     const dataParsed = JSON.parse(data);
 
-    this.checkDuplicateInObject();
-    return dataParsed;
+    console.log(this.checkDuplicateInObject(10000, dataParsed));
+    //return dataParsed;
   }
   
   // createHeatmap() {

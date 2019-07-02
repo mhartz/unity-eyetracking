@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using EyeTracker.Objects;
 using UnityEngine;
 
@@ -7,15 +10,24 @@ namespace EyeTracker
 {
     public class EyeTracker : MonoBehaviour
     {
-        public int targetRadius;
+        // public int targetRadius;
         
         [HideInInspector]
         public MouseTracking mouseTracking;
         
         [HideInInspector]
         public MouseOutput mouseOutput = new MouseOutput();
+
+        public Vector4[] points;
+        public Material heatmapMaterial;
     
         private Vector3 _mouse;
+
+        void Update()
+        {
+            heatmapMaterial.SetInt("_PointsSize", points.Length);
+            heatmapMaterial.SetVectorArray("_Points", points);
+        }
 
         private void OnMouseOver()
         {
@@ -24,7 +36,14 @@ namespace EyeTracker
 
         private void OnApplicationQuit()
         {
-            CreateJsonFile();
+            var aggregateTrackingData = AggregateTrackingData(); 
+            foreach (var data in aggregateTrackingData)
+            {
+                Debug.Log("/////////////////////////////////");
+                Debug.Log(data.XCoord.ToString());
+                Debug.Log(data.YCoord.ToString());
+                Debug.Log(data.Fixation.ToString());
+            }
         }
 
         private void AddTrackingData()
@@ -38,6 +57,25 @@ namespace EyeTracker
             };
 
             mouseOutput.Data.Add(mouseTracking);
+        }
+
+        private IEnumerable<MouseOutputData> AggregateTrackingData()
+        {
+            var group = mouseOutput.Data
+                .GroupBy(point => new
+                {
+                    point.XCoord,
+                    point.YCoord
+                })
+                .Select(mouseOutputData => new MouseOutputData
+                {
+                    XCoord = mouseOutputData.Key.XCoord,
+                    YCoord = mouseOutputData.Key.YCoord,
+                    Fixation = mouseOutputData.Count()
+                })
+                .ToList();
+
+             return group;
         }
 
         private void CreateJsonFile()

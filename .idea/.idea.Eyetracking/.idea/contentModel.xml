@@ -12,9 +12,13 @@
             <e p="EyeTracker.cs" t="Include" />
             <e p="Objects" t="Include">
               <e p="MouseOutput.cs" t="Include" />
+              <e p="MouseOutputData.cs" t="Include" />
               <e p="MouseTracking.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="HeatmapShader.shader" t="Include" />
         </e>
       </e>
       <e p="Eyetracking.sln" t="IncludeFlat" />
