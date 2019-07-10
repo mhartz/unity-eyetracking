@@ -1,9 +1,13 @@
+using System;
+using UnityEngine;
+
 namespace EyeTracker.Objects
 {
+    [Serializable]
     public class MouseOutputData
     {
-        public int XCoord { get; set; }
-        public int YCoord { get; set; }
-        public int Fixation { get; set; }
+        [SerializeField] public int x;
+        [SerializeField] public int y;
+        [SerializeField] public int value;
     }
 }

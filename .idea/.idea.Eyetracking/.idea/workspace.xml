@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2f1d55c-d7b7-4552-840d-6079dbab3b50" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseOutputData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseOutputData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Data/heatmap-controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Data/heatmap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/GroupedData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/GroupedData.cs.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../SCO_VIDEODISPLAY_02" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestHeatmap/.idea/.idea.TestHeatmap/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestHeatmap/.idea/.idea.TestHeatmap/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestHeatmap/.idea/.idea.TestHeatmap/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestHeatmap/.idea/.idea.TestHeatmap/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestHeatmap/.idea/.idea.TestHeatmap/riderModule.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Materials/Dust.mat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Materials/Dust.mat.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Prefabs/DustTrail.prefab" afterDir="false" />
@@ -37,8 +44,8 @@
       <change afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Prefabs/cars/rs.prefab.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Prefabs/cars/wrx.prefab" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Prefabs/cars/wrx.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Scripts/GameController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Scripts/GameController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Scripts/GameManager.cs.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Sprites/car-ae86.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Sprites/car-ae86.png.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Sprites/car-rs.png" afterDir="false" />
@@ -393,8 +400,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eyetracking/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eyetracking/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eyetracking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eyetracking/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Data/heatmap.data.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/heatmap.data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/heatmap.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/heatmap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/heatmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/heatmap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/heatmap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/HeatmapMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/HeatmapMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EyeTracker/EyeTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EyeTracker/EyeTracker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseOutputData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseOutputData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/HeatmapShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/HeatmapShader.shader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TopdownCar/.idea/.idea.TopdownCar/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TopdownCar/.idea/.idea.TopdownCar/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TopdownCar/.idea/.idea.TopdownCar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TopdownCar/.idea/.idea.TopdownCar/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TopdownCar/Assets/Scripts/Camera2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TopdownCar/Assets/Scripts/Camera2D.cs" afterDir="false" />
@@ -427,50 +439,51 @@
     <session id="-331195127">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.4" value="2" />
-          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="3812" />
+          <entry key="cs" value="4573" />
           <entry key="gitignore" value="85" />
-          <entry key="html" value="61" />
-          <entry key="js" value="336" />
+          <entry key="html" value="220" />
+          <entry key="js" value="538" />
           <entry key="json" value="18" />
           <entry key="shader" value="430" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="3812" />
-          <entry key="HTML" value="61" />
+          <entry key="C#" value="4573" />
+          <entry key="HTML" value="220" />
           <entry key="JSON" value="18" />
-          <entry key="JavaScript" value="336" />
+          <entry key="JavaScript" value="538" />
           <entry key="PLAIN_TEXT" value="85" />
           <entry key="ShaderLab" value="430" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="10" />
+          <entry key="cs" value="19" />
           <entry key="gitignore" value="4" />
-          <entry key="html" value="2" />
-          <entry key="js" value="2" />
-          <entry key="json" value="9" />
+          <entry key="html" value="4" />
+          <entry key="js" value="8" />
+          <entry key="json" value="11" />
           <entry key="shader" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="10" />
-          <entry key="HTML" value="1" />
-          <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="2" />
+          <entry key="C#" value="19" />
+          <entry key="HTML" value="3" />
+          <entry key="JSON" value="11" />
+          <entry key="JavaScript" value="8" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Scratch" value="1" />
           <entry key="ShaderLab" value="1" />
@@ -480,89 +493,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Data/heatmap.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Data/heatmap.data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="4161" selection-start-column="4161" selection-end-column="4161" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Data/heatmap-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/EyeTracker.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
+            <state relative-caret-position="987">
+              <caret line="128" column="24" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
               <folding>
-                <marker date="1562089350334" expanded="false" signature="6:153" ph="..." />
-                <marker date="1562089350334" expanded="true" signature="175:2539" ph="{...}" />
-                <marker date="1562089350334" expanded="true" signature="221:2537" ph="{...}" />
-                <marker date="1562089350334" expanded="true" signature="572:721" ph="{...}" />
-                <marker date="1562089350334" expanded="true" signature="757:808" ph="{...}" />
-                <marker date="1562089350334" expanded="true" signature="850:1239" ph="{...}" />
-                <marker date="1562089350334" expanded="true" signature="982:1229" ph="{...}" />
-                <marker date="1562089350334" expanded="true" signature="1279:1570" ph="{...}" />
-                <marker date="1562089350334" expanded="true" signature="1391:1509" ph="{...}" />
-                <marker date="1562089350334" expanded="true" signature="1640:2167" ph="{...}" />
-                <marker date="1562089350334" expanded="true" signature="1746:1832" ph="{...}" />
-                <marker date="1562089350334" expanded="true" signature="1913:2101" ph="{...}" />
-                <marker date="1562089350334" expanded="true" signature="2206:2531" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Shaders/HeatmapShader.shader">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1218">
-              <caret line="58" column="81" selection-start-line="58" selection-start-column="81" selection-end-line="58" selection-end-column="81" />
-              <folding>
-                <marker date="1562089439224" expanded="true" signature="100:2391" ph="{...}" />
-                <marker date="1562089439224" expanded="true" signature="121:386" ph="{...}" />
-                <marker date="1562089439224" expanded="true" signature="405:2366" ph="{...}" />
-                <marker date="1562089439224" expanded="true" signature="480:2355" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Data/heatmap.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="6" selection-start-column="6" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseOutputData.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-              <folding>
-                <marker date="1562015397582" expanded="true" signature="28:199" ph="{...}" />
-                <marker date="1562015397582" expanded="true" signature="63:197" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseOutput.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-              <folding>
-                <marker date="1561486438114" expanded="false" signature="6:66" ph="..." />
-                <marker date="1561486438114" expanded="true" signature="96:226" ph="{...}" />
-                <marker date="1561486438114" expanded="true" signature="146:224" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseTracking.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" selection-start-line="5" selection-end-line="6" />
-              <folding>
-                <marker date="1561488451237" expanded="true" signature="43:163" ph="{...}" />
-                <marker date="1561488451237" expanded="true" signature="95:161" ph="{...}" />
+                <marker date="1562786771056" expanded="false" signature="6:188" ph="..." />
+                <marker date="1562786771056" expanded="true" signature="210:3791" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="256:3789" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="474:689" ph="/* public Vector4[] positions; ... */" />
+                <marker date="1562786771056" expanded="true" signature="843:927" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="949:1462" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="960:1452" ph="/* positions = new Vector4[count]; ... */" />
+                <marker date="1562786771056" expanded="true" signature="1485:1996" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="1496:1986" ph="/* material.SetInt(&quot;_Points_Length&quot;, positions.Length); ... */" />
+                <marker date="1562786771056" expanded="true" signature="2032:2083" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="2125:2188" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="2228:2519" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="2340:2458" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="2589:3086" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="2695:2781" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="2862:3037" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="3138:3395" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="3270:3343" ph="{...}" />
+                <marker date="1562786771056" expanded="true" signature="3457:3783" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -573,8 +555,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -588,13 +570,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/EyeTracker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/HeatmapShader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/GroupedData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseTracking.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseOutput.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseOutputData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1F0C1EF1-AD52-4C38-BBC5-536809C46B48/13/fec1e617/List`1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -606,13 +588,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/EyeTracker/EyeTrackerModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Data/heatmap.json" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseOutput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Data/heatmap.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseTracking.cs" />
-        <option value="$PROJECT_DIR$/Assets/Data/heatmap.js" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseOutputData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EyeTracker/EyeTracker.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/HeatmapShader.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/GroupedData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseOutputData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Data/heatmap.js" />
+        <option value="$PROJECT_DIR$/Assets/Data/heatmap.min.js" />
+        <option value="$PROJECT_DIR$/Assets/Data/heatmap.data.js" />
+        <option value="$PROJECT_DIR$/Assets/Data/heatmap-controller.js" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EyeTracker/EyeTracker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Data/heatmap.html" />
       </list>
     </option>
   </component>
@@ -656,9 +642,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="UnityExplorer">
-        <option name="show-hidden-items" value="false" />
-      </pane>
       <pane id="FileSystemExplorer">
         <subPane>
           <expand>
@@ -675,13 +658,20 @@
               <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
               <item name="Eyetracking" type="34e6ba20:FileSystemExplorerNode" />
               <item name="Assets" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="Data" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="Eyetracking" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="Assets" type="34e6ba20:FileSystemExplorerNode" />
               <item name="Scripts" type="34e6ba20:FileSystemExplorerNode" />
             </path>
             <path>
               <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
               <item name="Eyetracking" type="34e6ba20:FileSystemExplorerNode" />
               <item name="Assets" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Shaders" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="Scripts" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="EyeTracker" type="34e6ba20:FileSystemExplorerNode" />
             </path>
           </expand>
           <select />
@@ -689,6 +679,9 @@
       </pane>
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="UnityExplorer">
+        <option name="show-hidden-items" value="false" />
       </pane>
     </panes>
   </component>
@@ -719,9 +712,9 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="7654">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="30629">
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="7654" />
+      <option name="pid" value="30629" />
       <method v="2" />
     </configuration>
     <list>
@@ -746,11 +739,13 @@
       <workItem from="1561485004800" duration="6235000" />
       <workItem from="1561562443822" duration="2813000" />
       <workItem from="1562010416678" duration="8282000" />
+      <workItem from="1562181486397" duration="86000" />
+      <workItem from="1562777773261" duration="7040000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31614000" />
+    <option name="totallyTimeSpent" value="39692000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -765,7 +760,7 @@
     <frame x="0" y="22" width="2560" height="1418" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1310564" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13264495" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -781,7 +776,7 @@
       <window_info anchor="bottom" id="Unity" order="10" weight="0.3295626" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unit Tests" order="12" />
-      <window_info anchor="bottom" id="Terminal" order="13" weight="0.2428356" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.14253394" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="15" weight="0.3295626" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -812,13 +807,31 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>group.GetType()</expression-string>
+        <expression-string>group.Result</expression-string>
+        <language-id>C#</language-id>
+        <custom-info>RiderImportsList:</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>group.result</expression-string>
+        <language-id>C#</language-id>
+        <custom-info>RiderImportsList:</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>@group.result</expression-string>
         <language-id>C#</language-id>
         <custom-info>RiderImportsList:</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
         <expression-string>group</expression-string>
+        <language-id>C#</language-id>
+        <custom-info>RiderImportsList:</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>group.GetType()</expression-string>
         <language-id>C#</language-id>
         <custom-info>RiderImportsList:</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -847,25 +860,6 @@
         <custom-info>RiderImportsList:</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>JsonUtility.ToJson(new object{&quot;data&quot;:&quot;test&quot;});</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>JsonUtility.ToJson({&quot;data&quot;:&quot;test&quot;});</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>JsonUtility.ToJson({
-        })</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
@@ -878,13 +872,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/IEyeTracker.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/EyeTrackerModel.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Data/heatmap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="43" lean-forward="true" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="916">
@@ -892,35 +879,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Data/heatmap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Data/heatmap.data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseTracking.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" selection-start-line="5" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Shaders/HeatmapShader.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
           <folding>
-            <marker date="1561488451237" expanded="true" signature="43:163" ph="{...}" />
-            <marker date="1561488451237" expanded="true" signature="95:161" ph="{...}" />
+            <marker date="1562095113399" expanded="true" signature="0:151" ph="/* Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld' ... */" />
+            <marker date="1562095113399" expanded="true" signature="191:235" ph="{...}" />
+            <marker date="1562095113399" expanded="true" signature="247:1440" ph="{...}" />
+            <marker date="1562095113399" expanded="true" signature="337:1437" ph="{...}" />
+            <marker date="1562095113399" expanded="true" signature="351:1428" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1F0C1EF1-AD52-4C38-BBC5-536809C46B48/13/fec1e617/List`1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="454" column="6" selection-start-line="454" selection-start-column="6" selection-end-line="454" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseOutput.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="24" />
           <folding>
             <marker date="1561486438114" expanded="false" signature="6:66" ph="..." />
             <marker date="1561486438114" expanded="true" signature="96:226" ph="{...}" />
@@ -929,56 +919,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/GroupedData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <marker date="1562784402912" expanded="true" signature="6:66" ph="..." />
+            <marker date="1562784402912" expanded="true" signature="96:229" ph="{...}" />
+            <marker date="1562784402912" expanded="true" signature="146:227" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Data/heatmap.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
+          <caret column="5558" lean-forward="true" selection-start-column="5558" selection-end-column="5558" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/Objects/MouseOutputData.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        <state relative-caret-position="168">
+          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding>
-            <marker date="1562015397582" expanded="true" signature="28:199" ph="{...}" />
-            <marker date="1562015397582" expanded="true" signature="63:197" ph="{...}" />
+            <marker date="1562784947999" expanded="false" signature="6:32" ph="..." />
+            <marker date="1562784947999" expanded="true" signature="62:251" ph="{...}" />
+            <marker date="1562784947999" expanded="true" signature="116:249" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Data/heatmap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="9232" selection-end-line="8" selection-end-column="9232" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/EyeTracker/EyeTracker.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
+        <state relative-caret-position="987">
+          <caret line="128" column="24" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
           <folding>
-            <marker date="1562089350334" expanded="false" signature="6:153" ph="..." />
-            <marker date="1562089350334" expanded="true" signature="175:2539" ph="{...}" />
-            <marker date="1562089350334" expanded="true" signature="221:2537" ph="{...}" />
-            <marker date="1562089350334" expanded="true" signature="572:721" ph="{...}" />
-            <marker date="1562089350334" expanded="true" signature="757:808" ph="{...}" />
-            <marker date="1562089350334" expanded="true" signature="850:1239" ph="{...}" />
-            <marker date="1562089350334" expanded="true" signature="982:1229" ph="{...}" />
-            <marker date="1562089350334" expanded="true" signature="1279:1570" ph="{...}" />
-            <marker date="1562089350334" expanded="true" signature="1391:1509" ph="{...}" />
-            <marker date="1562089350334" expanded="true" signature="1640:2167" ph="{...}" />
-            <marker date="1562089350334" expanded="true" signature="1746:1832" ph="{...}" />
-            <marker date="1562089350334" expanded="true" signature="1913:2101" ph="{...}" />
-            <marker date="1562089350334" expanded="true" signature="2206:2531" ph="{...}" />
+            <marker date="1562786771056" expanded="false" signature="6:188" ph="..." />
+            <marker date="1562786771056" expanded="true" signature="210:3791" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="256:3789" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="474:689" ph="/* public Vector4[] positions; ... */" />
+            <marker date="1562786771056" expanded="true" signature="843:927" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="949:1462" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="960:1452" ph="/* positions = new Vector4[count]; ... */" />
+            <marker date="1562786771056" expanded="true" signature="1485:1996" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="1496:1986" ph="/* material.SetInt(&quot;_Points_Length&quot;, positions.Length); ... */" />
+            <marker date="1562786771056" expanded="true" signature="2032:2083" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="2125:2188" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="2228:2519" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="2340:2458" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="2589:3086" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="2695:2781" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="2862:3037" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="3138:3395" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="3270:3343" ph="{...}" />
+            <marker date="1562786771056" expanded="true" signature="3457:3783" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Shaders/HeatmapShader.shader">
+    <entry file="file://$PROJECT_DIR$/Assets/Data/heatmap-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1218">
-          <caret line="58" column="81" selection-start-line="58" selection-start-column="81" selection-end-line="58" selection-end-column="81" />
-          <folding>
-            <marker date="1562089439224" expanded="true" signature="100:2391" ph="{...}" />
-            <marker date="1562089439224" expanded="true" signature="121:386" ph="{...}" />
-            <marker date="1562089439224" expanded="true" signature="405:2366" ph="{...}" />
-            <marker date="1562089439224" expanded="true" signature="480:2355" ph="{...}" />
-          </folding>
+        <state relative-caret-position="189">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Data/heatmap.data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4161" selection-start-column="4161" selection-end-column="4161" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Data/heatmap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
         </state>
       </provider>
     </entry>

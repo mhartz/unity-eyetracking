@@ -1,73 +1,62 @@
-﻿// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "Custom/HeatmapShader"
-{
-    Properties
-    {
-        _Color ("Color", Color) = (1,1,1,1)
-        _PointColor ("Point Color (RGB)", Color) = (1,0,0,1)
-        _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _Glossiness ("Smoothness", Range(0,1)) = 0.5
-        _Metallic ("Metallic", Range(0,1)) = 0.0
-    }
-    SubShader
-    {
-        Tags { "RenderType"="Opaque" }
-        LOD 200
+Shader "Custom/Heatmap" {
+	Properties {
+		_HeatTex ("Texture", 2D) = "white" {}
+	}
+	SubShader {
+		Tags {"Queue"="Transparent"}
+		Blend SrcAlpha OneMinusSrcAlpha // Alpha blend
 
-        CGPROGRAM
-// Upgrade NOTE: excluded shader from DX11, OpenGL ES 2.0 because it uses unsized arrays
-#pragma exclude_renderers d3d11 gles
-        // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf Standard fullforwardshadows
+		Pass {
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
 
-        // Use shader model 3.0 target, to get nicer looking lighting
-        #pragma target 3.0
+			struct vertInput {
+				float4 pos : POSITION;
+			};  
 
-        sampler2D _MainTex;
+			struct vertOutput {
+				float4 pos : POSITION;
+				fixed3 worldPos : TEXCOORD1;
+			};
 
-        struct Input
-        {
-            float2 uv_MainTex;
-            float3 worldPos;
-        };
+			vertOutput vert(vertInput input) {
+				vertOutput o;
+				o.pos = UnityObjectToClipPos(input.pos);
+				o.worldPos = mul(unity_ObjectToWorld, input.pos).xyz;
+				return o;
+			}
 
-        half _Glossiness;
-        half _Metallic;
-        fixed4 _Color;
-        fixed4 _PointColor;
-        
-        int _PointsSize;
-        fixed4 _Points[50];
+			uniform int _Points_Length = 0;
+			uniform float3 _Points [20];		// (x, y, z) = position
+			uniform float2 _Properties [20];	// x = radius, y = intensity
+			
+			sampler2D _HeatTex;
 
-        // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
-        // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
-        // #pragma instancing_options assumeuniformscaling
-        UNITY_INSTANCING_BUFFER_START(Props)
-            // put more per-instance properties here
-        UNITY_INSTANCING_BUFFER_END(Props)
+			half4 frag(vertOutput output) : COLOR {
+				// Loops over all the points
+				half h = 0;
+				for (int i = 0; i < _Points_Length; i ++)
+				{
+					// Calculates the contribution of each point
+					half di = distance(output.worldPos, _Points[i].xyz);
 
-        void surf (Input IN, inout SurfaceOutputStandard o)
-        {
-            // Albedo comes from a texture tinted by color
-            fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-            fixed4 emissive = 0;
-            
-            float3 objPosition = mul(unity_WorldToObject, float4(IN.worldPos, 0));
-            
-            for(int i = 0; i < _PointsSize; ++i) {
-                emissive += max(0, 1 - distance(_Points[i].xyz, objPosition.xyz));
-            }
-            
-            
-            o.Albedo = c.rgb;
-            o.Emission = emissive * _PointColor;
-            // Metallic and smoothness come from slider variables
-            o.Metallic = _Metallic;
-            o.Smoothness = _Glossiness;
-            o.Alpha = c.a;
-        }
-        ENDCG
-    }
-    FallBack "Diffuse"
+					half ri = _Properties[i].x;
+					half hi = 1 - saturate(di / ri);
+
+					h += hi * _Properties[i].y;
+				}
+
+				// Converts (0-1) according to the heat texture
+				h = saturate(h);
+				half4 color = tex2D(_HeatTex, fixed2(h, 0.5));
+				return color;
+			}
+			ENDCG
+		}
+	} 
+	Fallback "Diffuse"
 }
